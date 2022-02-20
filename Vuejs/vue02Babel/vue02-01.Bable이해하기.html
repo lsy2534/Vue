@@ -40,6 +40,24 @@
 </html>
 
 <!-- ES5 사용하기 -->
-
+<script>
+    var getMessage = function(){
+        var output_es5 = document.getElementById("output_es5")
+        output_es5.innerHTML = "<h1>Hello, ES5</h1>";
+    }
+    getMessage();
+</script>
 
 <!-- ES2015 사용하기 -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js">
+    /* 자바스크립트로 컴파일러. ES6-->ES5, JSX-->ES5 */
+</script>
+
+<script type="text/babel">
+    const getMessage = ()=>{
+        const output_es6 = document.getElementById("output_es6")
+        output_es6.innerHTML = "Heoll, ES6";
+    }
+    getMessage();
+</script>
