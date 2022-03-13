@@ -188,7 +188,8 @@
             "            console.log(\"updated\");",
             "        },",
             "    }",
-            "</script>"
+            "</script>",
+            ""
         ],
         "description": "Vue File Component"
     },
