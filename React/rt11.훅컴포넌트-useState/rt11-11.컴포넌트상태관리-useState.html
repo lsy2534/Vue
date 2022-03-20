@@ -147,8 +147,8 @@ function ExampleContainer(props) {
     // callback 메서드 작성. callback 메서드는 부모의 공유 상태값을 변경하기 위해서 사용된다.
     const callback = useCallback( (param)=>{
         // state 변경
-        setSetCount(count=>count+1);
-    }, [/* 메서드와 연관되는 상태(변수)명들을 기술 */]);
+        setSetCount(count +1);
+    }, [count/* 메서드와 연관되는 상태(변수)명들을 기술 */]);
 
     // 이벤트 핸들러 작성.
     const handler = (event)=>{
