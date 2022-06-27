@@ -97,5 +97,6 @@
 
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "terminal.integrated.fontFamily": "monospace"
 }
