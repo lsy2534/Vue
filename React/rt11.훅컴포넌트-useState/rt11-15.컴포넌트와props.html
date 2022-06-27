@@ -73,6 +73,7 @@
     /* 불변객체 state를 조작하는 라이브러리. import immer from 'immer' */
 </script>
 <script type="text/babel">
+<<<<<<< HEAD
 
 const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 
@@ -177,5 +178,106 @@ ReactDOM.render(
 );
 </script>
 
+=======
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838
 
+const { useState, useEffect, useRef, useCallback, useMemo, Fragment } = React;
 
+function HelloWorld(props) {
+
+    // redux store 와 연동되는 경우에만 useDispatch(), useSelector() 사용
+    // const dispatch = useDispatch();
+    // const { error, isLoading, notis } = useSelector( state => state.notis );
+
+    // 컴포넌트의 상태값 설정
+    const [변수명, set변수명] = useState('기본값'); // 상태값이 기본타입인 경우
+    const [items, setItems] = useState([]); // 상태값이 참조타입 경우
+
+    // ref 만들기. 예시) const refInput = useRef();
+
+    // refIsMounted는 생명주기의 마운트와 업데이트를 구분하기 위한 ref
+    const refIsMounted = useRef(false);
+    useEffect( () => {
+        if (refIsMounted.current){
+            // 업데이트 될 때마다 실행됨. 여러번. state 가 변경될 때마다
+            console.log('componentDidUpdate');
+        }
+        else {
+            // 마운트 완료 후에 실행됨. 한번만. focus 줄때
+            console.log('componentDidMount');
+            refIsMounted.current = true;
+        }
+    });
+
+    // callback 메서드 작성. callback 메서드는 부모의 공유 상태값을 변경하기 위해서 사용된다.
+    const callback = useCallback( (param)=>{
+        // state 변경
+    }, [/* 메서드와 연관되는 상태(변수)명들을 기술 */]);
+
+    // 이벤트 핸들러 작성.
+    const handler = (event)=>{
+        // 이벤트 핸들러는 화살표 함수로 만든다
+        console.log(event.target);
+    };
+
+        // JSX로 화면 만들기
+        return (
+            <ul>
+            {props.index.map((value, index) => {
+                return <li key={index}>Hello, React world!!!  {index} --- component</li>
+            })}
+            </ul>
+        )
+    }
+
+    function HelloWorldContainer(props) {
+
+        // redux store 와 연동되는 경우에만 useDispatch(), useSelector() 사용
+        // const dispatch = useDispatch();
+        // const { error, isLoading, notis } = useSelector( state => state.notis );
+
+        // 컴포넌트의 상태값 설정
+        const [변수명, set변수명] = useState('기본값'); // 상태값이 기본타입인 경우
+        const [index, setIndex] = useState([0,1,2,3,4]);  // 상태값이 기본타입인 경우
+        const [state, setState] = useState([0,1,2,3,4]); // 상태값이 참조타입 경우
+
+        // ref 만들기. 예시) const refInput = useRef();
+
+        // refIsMounted는 생명주기의 마운트와 업데이트를 구분하기 위한 ref
+        const refIsMounted = useRef(false);
+        useEffect( () => {
+            if (refIsMounted.current){
+                // 업데이트 될 때마다 실행됨. 여러번. state 가 변경될 때마다
+                console.log('componentDidUpdate');
+            }
+            else {
+                // 마운트 완료 후에 실행됨. 한번만. focus 줄때
+                console.log('componentDidMount');
+                refIsMounted.current = true;
+            }
+        });
+
+        // callback 메서드 작성. callback 메서드는 부모의 공유 상태값을 변경하기 위해서 사용된다.
+        const callback = useCallback( (param)=>{
+            // state 변경
+        }, [/* 메서드와 연관되는 상태(변수)명들을 기술 */]);
+
+        // 이벤트 핸들러 작성.
+        const handler = (event)=>{
+            // 이벤트 핸들러는 화살표 함수로 만든다
+            console.log(event.target);
+        };
+
+        // JSX로 화면 만들기
+        return (
+            <HelloWorld index={index}></HelloWorld>
+        )
+    }
+
+    ReactDOM.render(
+        <HelloWorldContainer></HelloWorldContainer>
+        ,
+        document.getElementById('app')
+    )
+
+</script>

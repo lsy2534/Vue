@@ -1,4 +1,17 @@
-<style scoped>
+<template>
+    <div id="app"></div>
+</template>
+
+<script>
+//import HelloWorld from './components/HelloWorld.vue';
+
+export default {
+    name: 'App'
+    //components: {        HelloWorld    }
+};
+</script>
+
+<style>
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -8,15 +21,3 @@
     margin-top: 60px;
 }
 </style>
-
-<template>
-    <div id="app">
-        <p>sejoong</p>
-    </div>
-</template>
-
-<script>
-export default {
-    components: {}
-};
-</script>

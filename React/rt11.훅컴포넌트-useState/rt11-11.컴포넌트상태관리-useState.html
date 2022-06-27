@@ -93,6 +93,10 @@
 
 </html>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js">
     /* 자바스크립트로 컴파일러. ES6-->ES5, JSX-->ES5 */
 </script>
@@ -124,8 +128,12 @@ function ExampleContainer(props) {
     // const { error, isLoading, notis } = useSelector( state => state.notis );
 
     // 컴포넌트의 상태값 설정
+<<<<<<< HEAD
     const [변수명, set변수명] = useState('기본값'); // 상태값이 기본타입인 경우
     const [count, setCount] = useState(0); // 상태값이 기본타입인 경우
+=======
+    const [count, setSetCount] = useState(0); // 상태값이 기본타입인 경우
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838
     const [state, setState] = useState({ id: 0, name: '', age: 0, }); // 상태값이 참조타입 경우
 
     // ref 만들기. 예시) const refInput = useRef();
@@ -146,8 +154,13 @@ function ExampleContainer(props) {
 
     // callback 메서드 작성. callback 메서드는 부모의 공유 상태값을 변경하기 위해서 사용된다.
     const callback = useCallback( (param)=>{
+<<<<<<< HEAD
         setCount(count+1);
         // state 변경
+=======
+        // state 변경
+        setSetCount(count +1);
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838
     }, [count/* 메서드와 연관되는 상태(변수)명들을 기술 */]);
 
     // 이벤트 핸들러 작성.
@@ -155,6 +168,7 @@ function ExampleContainer(props) {
         // 이벤트 핸들러는 화살표 함수로 만든다
         console.log(event.target);
     };
+<<<<<<< HEAD
 
     // JSX로 화면 만들기
     return (
@@ -166,6 +180,15 @@ function ExampleContainer(props) {
     )
 }
 
+=======
+    // JSX로 화면 만들기
+    return (
+        <div>
+            <Example count={count} onClick={callback}></Example>
+        </div>
+    )
+}
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838
 function Example(props) {
 
     // redux store 와 연동되는 경우에만 useDispatch(), useSelector() 사용
@@ -173,8 +196,13 @@ function Example(props) {
     // const { error, isLoading, notis } = useSelector( state => state.notis );
 
     // 컴포넌트의 상태값 설정
+<<<<<<< HEAD
     const [age, setAge] = useState(31); // 상태값이 기본타입인 경우
     const [fruit, setFruit] = useState('banana');
+=======
+    const [age, setAge] = useState(42); // 상태값이 기본타입인 경우
+    const [fruit, setFruit] = useState('banana'); // 상태값이 기본타입인 경우
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838
     const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
 
     // ref 만들기. 예시) const refInput = useRef();
@@ -195,6 +223,10 @@ function Example(props) {
 
     // callback 메서드 작성. callback 메서드는 부모의 공유 상태값을 변경하기 위해서 사용된다.
     const callback = useCallback( (param)=>{
+<<<<<<< HEAD
+=======
+        return props.count + 1;
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838
         // state 변경
     }, [/* 메서드와 연관되는 상태(변수)명들을 기술 */]);
 
@@ -207,6 +239,7 @@ function Example(props) {
     // JSX로 화면 만들기
     return (
         <div>
+<<<<<<< HEAD
             <p>
                     <span>You clicked {props.count} times</span>
                     <button onClick={props.callback}>
@@ -218,13 +251,39 @@ function Example(props) {
                 <p> { todos.map((value, index)=>{
                     return <li key={index}>{value.text}</li>
                 })}</p>
+=======
+                    <p>You clicked {props.count} times</p>
+                    <button onClick= {props.onClick}>
+                        Click me
+                    </button>
+                <p> age: { age }</p>
+                <p> fruit: { fruit }</p>
+                <p> { todos[0].text }</p>
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838
         </div>
     )
 }
 
+<<<<<<< HEAD
+=======
+Example.propTypes = {
+    // props의 프로퍼티 타입 설정. https://ko.reactjs.org/docs/typechecking-with-proptypes.html
+    // 인자명: PropTypes.func.isRequired,
+};
+Example.defaultProps = {
+    // props의 디폴트 값 설정. https://ko.reactjs.org/docs/typechecking-with-proptypes.html
+    // 인자명: () => {},
+};
+
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838
 ReactDOM.render(
     <ExampleContainer></ExampleContainer>
     ,
     document.getElementById('app')
+<<<<<<< HEAD
 );
 </script>
+=======
+)
+</script>
+>>>>>>> 1764382cd9464e439e1b53495d90a2f79a35e838

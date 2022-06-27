@@ -26,4 +26,35 @@
 </html>
 
 
-
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js">
+    /* 자바스크립트로 컴파일러. ES6-->ES5, JSX-->ES5 */
+</script>
+<script type="text/babel">
+
+    //ES5
+    var name = '길동';
+    var age = 15;
+    var p1 = {
+        name : name ,
+        age : age,
+        powderYell : function () {
+            var yell = this.toUpperCase();
+            console.log(yell + yell + "!!!!")
+        }
+
+    };
+
+    //ES2015
+    const p2 = {
+        name,
+        age,
+        powderYell() {
+            var yell = this.name.toUpperCase();
+            console.log(yell + yell + "!!!");
+        }
+    }
+</script>
+
+
+

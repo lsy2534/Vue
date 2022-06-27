@@ -79,9 +79,9 @@
         <span v-if="awesome">
             Now you see me
         </span>
-        <div v-else>
+        <span v-else>
             Now you don't
-        </div>
+        </span>
     </div>
 
     <h2>v-if/v-else-if/v-else 연습 4 : 실습</h2>
@@ -106,4 +106,61 @@
 
 <!-- vue 플러그인 임포트   -->
 
+<!-- vue 플러그인 임포트   -->
+<script src="https://unpkg.com/vue@2.6.14/dist/vue.js">/* vue 플러그인 임포트 */</script>
+<script>
+    new Vue({
+        /* edtmc^2w */
+        el: "#app1",
+        data: {
+            /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+            awesome : true,
+        },
+    });
+
+    new Vue({
+        /* edtmc^2w */
+        el: "#app2",
+        data: {
+            awesome : false
+            /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+        },
+    });
+
+    new Vue({
+        /* edtmc^2w */
+        el: "#app3",
+        data: {
+            /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+            awesome : true,
+        },
+        //template: ``,
+        methods: {
+            /* 이벤트 핸들러 등록 + 일반 함수 */
+            clickBind(){
+                //this.$data.awesome = !this.$data.awesome ;
+                this.$set(this.$data, 'awesome', !this.$data.awesome);
+            },
+        },
+    });
+    new Vue({
+        /* edtmc^2w */
+        el: "#app4",
+        data: {
+            /* 인스턴스 안에서 사용되는 변수 등록, 공유 변수 */
+            type : 2,
+        },
+        //template: ``,
+        methods: {
+            /* 이벤트 핸들러 등록 + 일반 함수 */
+            clickBind() {
+                this.$data.type = (this.$data.type +1)%4;
+                //var a = Math.trunc(Math.random() * (5 - 1) + 1);
+                //this.$data.type = a;
+            }
+        },
+    });
+
+
+</script>
 

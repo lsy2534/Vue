@@ -117,6 +117,60 @@
 </html>
 
 <script>
+<<<<<<< HEAD
+        const objarray = [
+        { text: 'One', value: 'A' },
+        { text: 'Two', value: 'B' },
+        { text: 'Three', value: 'C' }
+    ];
+
+    objarray[objarray.length] = {
+        text:'Four',
+        value : 'D'
+    }
+    const index = objarray.findIndex((value,index, obj) => {
+        return value.text == 'Two'
+    });
+    objarray[index] = { text : '2', value : '2'};
+
+    console.log(objarray);
+
+    console.log(objarray.filter((value,number,array) => {
+        return value.text == 'One'
+    }));
+
+    var index2 = objarray.findIndex((value,index,obj) => {
+        return (value.text =='Three' && value.value =='C')
+    });
+    objarray.splice(index2,1);
+    console.log(objarray);
+
+    const arrMaped = objarray.map((obj, index, value)=>{
+        obj.no = index;
+        return obj;
+    });
+    console.log(arrMaped);
+
+    const valueMap = objarray.map((obj, index, value) => {
+        return obj.value;
+    });
+
+    const sumer = valueMap.reduce((pvalue, cvalue) => {
+        return pvalue + cvalue
+    }, '');
+    console.log(sumer);
+
+    const findIndex = objarray.findIndex((precation, index, obj) => {
+        return precation.value == 'D'
+    });
+    console.log(findIndex);
+
+    const filterobj  = objarray.filter((predicate, indexNumber, arr) => {
+        return predicate.value == 'D'
+    });
+    console.log(filterobj);
+</script>
+=======
     const objarray = [
         { text : 'One', value :'A'},
         { text: 'Two', value : 'B'},
@@ -174,3 +228,4 @@
     console.log(mapFilter)
 
 </script>
+>>>>>>> 6723c8adf3be9921434045e31b0390989dddb539

@@ -24,8 +24,8 @@ div {
 </template>
 
 <script>
-import Header from "./Header.vue";
-import Footer from "./Footer.vue";
+import Header from "./HeaderComp.vue";
+import Footer from "./FooterComp.vue";
 
 export default {
   data() {
